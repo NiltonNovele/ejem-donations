@@ -27,13 +27,17 @@ for (const file of [DONATIONS_FILE, PARTNERSHIPS_FILE, WEBHOOK_LOG_FILE]) {
   if (!fs.existsSync(file)) fs.writeFileSync(file, "[]", "utf8");
 }
 
-const allowedReturnOrigins = [
+const allowedOrigins = [
   "http://localhost:3000",
   "https://loja.sale",
   "https://www.loja.sale",
   "https://loja-sale.vercel.app",
+  "https://prototipo-landing.vercel.app",
   "https://www.ejem.org.mz",
+  "https://ejem.org.mz",
 ];
+
+const allowedReturnOrigins = allowedOrigins;
 
 function isValidReturnUrl(url) {
   try {
