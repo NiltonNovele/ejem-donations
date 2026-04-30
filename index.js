@@ -220,7 +220,7 @@ app.post("/api/donations/create-payment", async (req, res) => {
 
     const reference = buildReference("DON");
     const description = truncate(
-      `Doação EJEM${message ? ` - ${message}` : ""}`,
+      `${message ? ` - ${message}` : ""}`,
       125
     );
 
@@ -229,9 +229,7 @@ app.post("/api/donations/create-payment", async (req, res) => {
       method: mappedMethod,
       reference,
       description,
-      return_url:
-        process.env.PAYSUITE_RETURN_URL ||
-        `${process.env.FRONTEND_URL || "http://localhost:3000"}/donate?payment=return`,
+      return_url,
       callback_url:
         process.env.PAYSUITE_CALLBACK_URL ||
         `${process.env.PUBLIC_BACKEND_URL || `http://localhost:${PORT}`}/api/paysuite/webhook`,
