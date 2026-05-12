@@ -35,6 +35,8 @@ const allowedOrigins = [
   "https://prototipo-landing.vercel.app",
   "https://www.ejem.org.mz",
   "https://ejem.org.mz",
+  "https://amysabores.loja.sale",
+  "https://www.amysabores.loja.sale",
 ];
 
 const allowedReturnOrigins = allowedOrigins;
